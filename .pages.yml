@@ -231,6 +231,7 @@ content:
     label: Blog Posts
     type: collection
     path: src/blog
+    exlude: [categories]
     filename: "{primary}.md"
     fields:
       - name: title

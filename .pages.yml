@@ -78,6 +78,24 @@ components:
           type: string
           description: Add alt text for screen readers to describe the hero image.
 
+  blog-setup:
+    label: Blog Setup
+    type: object
+    fields:
+      - name: blog_categories
+        label: Blog Categories
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Category
+            type: string
+      - name: blog_excerpt
+        label: Blog Excerpt
+        type: text
+        maxlength: 60
+        description: Add a short excerpt for the blog post (up to 60 characters). This will be displayed on the blog cards on the main blog page.
+
   cards:
     label: Cards
     fields:
@@ -222,7 +240,48 @@ content:
       - name: page_setup
         label: Page Setup
         component: page-setup
-        
+      - name: blog_setup
+        label: Blog Setup
+        component: blog-setup
+      # HERO SECTION - Required, choose one type
+      - name: hero
+        label: Hero Section
+        type: block
+        blockKey: type
+        list: 
+          collapsible: true
+          min: 1
+          max: 1
+        blocks:
+          - name: hero-simple
+            label: Simple Hero
+            component: hero-simple
+          - name: hero-with-image
+            label: Hero with Image
+            component: hero-with-image
+      # CONTENT - Optional flexible blocks
+      - name: blocks
+        label: Blocks
+        type: block
+        blockKey: type
+        list: true
+        blocks:
+          - name: accordion
+            label: Accordion
+            component: accordion
+          - name: alt-content
+            label: Alternating Content
+            component: alt-content
+          - name: cards
+            label: Cards
+            component: cards
+          - name: contact-form
+            label: Contact Form
+            component: contact-form
+          - name: text-editor
+            label: Text Editor
+            component: text-editor
+
   - name: pages
     label: Pages
     type: collection

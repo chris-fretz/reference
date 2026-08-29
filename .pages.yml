@@ -248,6 +248,7 @@ content:
         label: Hero Section
         type: block
         blockKey: type
+        required: true
         list: 
           collapsible: true
           min: 1
@@ -300,6 +301,7 @@ content:
       - name: hero
         label: Hero Section
         type: block
+        required: true
         blockKey: type
         list: 
           collapsible: true
